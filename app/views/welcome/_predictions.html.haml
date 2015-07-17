@@ -1,0 +1,31 @@
+%section{:id => "predictions"}
+    .panel.panel-default
+        .panel-heading
+            %h2.panel-title COLLLEGE PARK TRAIN ARRIVAL TIMES
+        .panel-body
+            .table-responsive
+            %table.table.table-hover
+                %tr
+                    %th Line
+                    %th Towards
+                    %th Arriving
+                - @college_park['Trains'].each do |prediction|
+                    %tr
+                        %td= prediction['Line']
+                        %td= prediction['DestinationName']
+                        %td= prediction['Min']
+    .panel.panel-default
+        .panel-heading
+            %h2.panel-title GALLERY PLACE TRAIN ARRIVAL TIMES
+        .panel-body
+            .table-responsive
+            %table.table.table-hover
+                %tr
+                    %th Line
+                    %th Towards
+                    %th Arriving
+                - @gallery_place['Trains'].each do |prediction|
+                    %tr
+                        %td= prediction['Line']
+                        %td= prediction['DestinationName']
+                        %td= prediction['Min']  

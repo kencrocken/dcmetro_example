@@ -1,0 +1,14 @@
+%section{:id => "alerts"}
+    - if @alerts.empty?
+        .panel.panel-success
+            .panel-heading
+                %h2.panel-title DCMETRO ALERTS
+            .panel-body
+                %p.alerts-none No incidents to report
+    - else
+        .panel.panel-warning
+            .panel-heading
+                %h2.panel-title DCMETRO ALERTS
+            .panel-body
+                - @alerts.each do |alert|
+                    %p= alert['Description']

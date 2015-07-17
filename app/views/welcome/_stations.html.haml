@@ -1,0 +1,8 @@
+%section{:id => "rail-stations"}
+    .panel.panel-default
+        .panel-heading
+            %h2.panel-title DCMETRO GREEN LINE STATIONS
+        .panel-body
+            %ul
+                -@stations.each do |station|
+                    %li= station["Name"]

@@ -1,0 +1,48 @@
+:markdown
+    RAILS SETUP
+    ===========
+    * * *
+    ### Start a new Rails app and add `gem 'dcmetro'` to the gemfile.
+    For the documentation please see the [Github repo](http://github.com/kencrocken/dcmetro).
+    * * *
+    ### Initialize the `API_KEY` constant.
+    Since I use the CLI for the DCMetro Gem, I have my api_key saved in my shell.  In the <code>assets.rb</code> file, initialize the `API_KEY` for the gem.  On any remote server, an environment variable would need to be set.
+
+    ```language-ruby
+    # config/initializers/assets.rb
+
+    Rails.application.config.assets.version = '1.0'
+    DCMetro::Information::API_KEY = ENV['DCMETRO_KEY']
+    ```
+
+    * * *
+    ### You are ready to go! 
+    Now where ever you need to pull in some information about the DC Metro Rail system, instantiate the DCMetro Information class and you are ready to go!
+
+    ```language-ruby
+    # app/controllers/welcome_controller.rb
+
+    class WelcomeController < ApplicationController
+    
+        def index
+            x = DCMetro::Information.new
+            @alerts = x.alerts['Incidents']
+            @lines = x.line
+            @stations = x.line "green"
+            @college_park = x.station "college"
+            @gallery_place = x.station "gallery"
+            #
+            # Not available in DCMetro 0.0.2
+            # @fare_info = x.station "college", "gallery"
+        end
+
+    end
+    ```
+
+    * * *
+
+= render 'welcome/alerts'
+= render 'welcome/rail_lines'
+= render 'welcome/stations'
+= render 'welcome/predictions'
+

@@ -1,0 +1,20 @@
+header {
+    background-color: cornflowerblue;
+    color: white;
+    padding-left: 12px;
+    margin-bottom: 25px;
+    h1 {
+        margin: 0;
+        padding-top: 15px;
+    }
+    .header-icon {
+        text-align: center;
+        &-train {
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 30px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+    }
+}
