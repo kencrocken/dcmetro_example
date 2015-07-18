@@ -1,0 +1,14 @@
+:markdown
+
+    ```language-haml
+        %table
+            %tr
+                %th Line
+                %th Towards
+                %th Arriving
+            - @station_variable['Trains'].each do |prediction|
+                %tr
+                    %td= prediction['Line']
+                    %td= prediction['DestinationName']
+                    %td= prediction['Min']
+    ```

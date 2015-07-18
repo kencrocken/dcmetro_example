@@ -6,3 +6,5 @@
             %ul
                 -@stations.each do |station|
                     %li= station["Name"]
+        .panel-footer
+            = render "welcome/stations_footer"

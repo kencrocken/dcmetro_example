@@ -14,6 +14,8 @@
                         %td= prediction['Line']
                         %td= prediction['DestinationName']
                         %td= prediction['Min']
+        .panel-footer
+            = render "welcome/predictions_footer"
     .panel.panel-default
         .panel-heading
             %h2.panel-title GALLERY PLACE TRAIN ARRIVAL TIMES
@@ -29,3 +31,5 @@
                         %td= prediction['Line']
                         %td= prediction['DestinationName']
                         %td= prediction['Min']  
+        .panel-footer
+            = render "welcome/predictions_footer"
