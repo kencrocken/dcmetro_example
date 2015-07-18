@@ -1,18 +1,18 @@
-%section{:id => "alerts"}
-- if @alerts.empty?
-    .panel.panel-success
-        .panel-heading
-            %h2.panel-title DCMETRO ALERTS
-        .panel-body
-            %p.alerts-none No incidents to report
-        .panel-footer
-            = render 'welcome/alert_footer'           
-- else
-    .panel.panel-danger
-        .panel-heading
-            %h2.panel-title DCMETRO ALERTS
-        .panel-body
-            - @alerts.each do |alert|
-                %p= alert['Description']               
-        .panel-footer
-            = render 'welcome/alert_footer'
+%section#alerts
+    - if @alerts.empty?
+        .panel.panel-success
+            .panel-heading
+                %h2.panel-title DCMETRO ALERTS
+            .panel-body
+                %p.alerts-none No incidents to report
+            .panel-footer
+                = render 'welcome/alert_footer'           
+    - else
+        .panel.panel-danger
+            .panel-heading
+                %h2.panel-title DCMETRO ALERTS
+            .panel-body
+                - @alerts.each do |alert|
+                    %p= alert['Description']               
+            .panel-footer
+                = render 'welcome/alert_footer'

@@ -1,9 +1,8 @@
 :markdown
     ```language-haml
-        %section{:id => "alerts"}
-            - if @alerts.empty?
-                %p No incidents to report
-            - else
-                - @alerts.each do |alert|
-                    %p= alert['Description']
+        - if @alerts.empty?
+            %p No incidents to report
+        - else
+            - @alerts.each do |alert|
+                %p= alert['Description']
     ```
