@@ -26,3 +26,21 @@ ul {
 p.alerts-none {
     font-size: 21px;
 }
+
+.side-bar {
+    ul li {
+        font-size: 16px;
+        padding-bottom: 5px;
+        &:last-child {
+            padding-bottom: 0;
+        }
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.affix {
+        top: 15px;
+    }
+}
