@@ -28,6 +28,7 @@ p.alerts-none {
 }
 
 .side-bar {
+    display: block;
     ul li {
         font-size: 16px;
         padding-bottom: 5px;
@@ -43,4 +44,5 @@ p.alerts-none {
     &.affix {
         top: 15px;
     }
+    @media (max-width: 768px) { display: none; }
 }
