@@ -3,33 +3,40 @@
         .panel-heading
             %h2.panel-title COLLLEGE PARK TRAIN ARRIVAL TIMES
         .panel-body
-            .table-responsive
-            %table.table.table-hover
-                %tr
-                    %th Line
-                    %th Towards
-                    %th Arriving
-                - @college_park['Trains'].each do |prediction|
-                    %tr
-                        %td= prediction['Line']
-                        %td= prediction['DestinationName']
-                        %td= prediction['Min']
+            - if @college_park['Trains'].empty?
+                %p No current train arrivals/departures
+            - else
+                .table-responsive
+                    %table.table.table-hover
+                        %tr
+                            %th Line
+                            %th Towards
+                            %th Arriving
+                        - @college_park['Trains'].each do |prediction|
+                            %tr
+                                %td= prediction['Line']
+                                %td= prediction['DestinationName']
+                                %td= prediction['Min']
+
         .panel-footer
             = render "welcome/predictions_footer"
     .panel.panel-default
         .panel-heading
             %h2.panel-title GALLERY PLACE TRAIN ARRIVAL TIMES
         .panel-body
-            .table-responsive
-            %table.table.table-hover
-                %tr
-                    %th Line
-                    %th Towards
-                    %th Arriving
-                - @gallery_place['Trains'].each do |prediction|
+            - if @gallery_place['Trains'].empty?
+                %p No current train arrivals/departures
+            - else
+                .table-responsive
+                %table.table.table-hover
                     %tr
-                        %td= prediction['Line']
-                        %td= prediction['DestinationName']
-                        %td= prediction['Min']  
+                        %th Line
+                        %th Towards
+                        %th Arriving
+                    - @gallery_place['Trains'].each do |prediction|
+                        %tr
+                            %td= prediction['Line']
+                            %td= prediction['DestinationName']
+                            %td= prediction['Min']  
         .panel-footer
             = render "welcome/predictions_footer"

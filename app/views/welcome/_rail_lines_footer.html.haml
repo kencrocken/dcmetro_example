@@ -1,6 +1,6 @@
 :markdown
     ```language-haml
         %ul
-        -@lines.each do |line|
+        -@lines['Lines'].each do |line|
             %li= line["DisplayName"]
     ```

@@ -1,5 +1,5 @@
 %section#alerts
-    - if @alerts.empty?
+    - if @alerts['Incidents'].empty?
         .panel.panel-success
             .panel-heading
                 %h2.panel-title DCMETRO ALERTS
@@ -12,7 +12,7 @@
             .panel-heading
                 %h2.panel-title DCMETRO ALERTS
             .panel-body
-                - @alerts.each do |alert|
+                - @alerts['Incidents'].each do |alert|
                     %p= alert['Description']               
             .panel-footer
                 = render 'welcome/alert_footer'

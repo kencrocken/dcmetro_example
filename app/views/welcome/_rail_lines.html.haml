@@ -4,7 +4,7 @@
             %h2.panel-title DCMETRO RAIL LINES
         .panel-body
             %ul
-                -@lines.each do |line|
+                -@lines['Lines'].each do |line|
                     %li= line["DisplayName"]
         .panel-footer
             = render "welcome/rail_lines_footer"

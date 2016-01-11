@@ -4,7 +4,7 @@
             %h2.panel-title DCMETRO GREEN LINE STATIONS
         .panel-body
             %ul
-                -@stations.each do |station|
+                -@stations['Stations'].each do |station|
                     %li= station["Name"]
         .panel-footer
             = render "welcome/stations_footer"
