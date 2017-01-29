@@ -19,6 +19,8 @@
 @import "prism";
 @import "header";
 
+body { position: relative; }
+
 ul {
     list-style: none;
 }
@@ -26,18 +28,34 @@ ul {
 p.alerts-none {
     font-size: 21px;
 }
-
-.side-bar {
+// #side-nav ul li a[href^='#']
+#side-nav {
     display: block;
+    width: 135px;
     ul li {
         font-size: 16px;
+        padding-top: 0;
         padding-bottom: 5px;
+        border-radius: 0px;
         &:last-child {
             padding-bottom: 0;
         }
         a {
-            &:hover {
-                text-decoration: none;
+            padding: 0;
+            &:hover, &:focus {
+                font-weight: 600;
+                text-decoration: underline;
+                background: none;
+                
+            }
+        }
+        &.active {
+            a {
+                font-weight: 600;
+                text-decoration: underline;
+                background: none;
+                color: #23527c;
+                
             }
         }
     }

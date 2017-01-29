@@ -6,7 +6,7 @@
     = stylesheet_link_tag 'application', :media => 'all', "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tag
-  %body{ :class => "#{controller_name} #{action_name}" }
+  %body{ :class => "#{controller_name} #{action_name}", :data => { :spy => "scroll", :target => "#side-nav"} }
 
     = render 'layouts/header'
     .container

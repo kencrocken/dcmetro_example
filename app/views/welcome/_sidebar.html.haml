@@ -1,7 +1,7 @@
-.side-bar{ data: { spy: "affix", "offset-top" => 97 } }
-    %ul
+.side-bar{ :id => "side-nav", data: { spy: "affix", "offset-top" => 97 } }
+    %ul{ :class => "nav nav-pills nav-stacked", :role => "tablist" }
         %li
-            %a{ href: "#top" } Rails Setup
+            %a{ href: "#rails-setup" } Rails Setup
         %li
             %a{ href: "#alerts" } Alerts
         %li
