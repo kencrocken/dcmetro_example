@@ -1,0 +1,32 @@
+%section#fare-info
+    .panel.panel-default
+        .panel-heading
+            %h2.panel-title 
+                FARE INFORMATION
+                %span.small College Park to Gallery Place
+        .panel-body
+            - if @fare_info['StationToStationInfos'].empty?
+                %p No fare information available
+            - else
+                / =@fare_info['StationToStationInfos']
+                .table-responsive
+                    %table.table.table-hover
+                        %tr
+                            %th Distance
+                            %th Time
+                        - @fare_info['StationToStationInfos'].each do |info|
+                            %tr
+                                %td #{info['CompositeMiles']} Miles
+                                %td #{info['RailTime']} Minutes
+                            %tr
+                                %th Fare
+                                %th Cost
+                            -info['RailFare'].each do |fare,value|
+                                %tr
+                                    %td= fare
+                                    %td= number_to_currency(value)
+
+
+
+        .panel-footer
+            = render "welcome/fare_footer"

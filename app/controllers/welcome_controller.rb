@@ -5,15 +5,14 @@ class WelcomeController < ApplicationController
         @alerts = JSON.parse(x.alerts)
         puts @alerts
         @lines = JSON.parse(x.line)
-        puts "==================== #{@lines['Lines']}"
+        # puts "==================== #{@lines['Lines']}"
         @stations = JSON.parse x.line "green"
-        puts "==================== #{@stations['Stations']}"
+        # puts "==================== #{@stations['Stations']}"
         @college_park = JSON.parse x.station "college"
-        puts "==================== #{@college_park}"
+        # puts "==================== #{@college_park}"
         @gallery_place = JSON.parse x.station "gallery"
-        #
-        # Not available in DCMetro 0.0.2
-        # @fare_info = x.station "college", "gallery"
+        @fare_info = JSON.parse x.station "college", "gallery"
+        puts "===================== #{@fare_info}"
     end
 
 end

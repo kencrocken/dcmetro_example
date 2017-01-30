@@ -1,0 +1,19 @@
+:markdown
+
+    ```language-haml
+        %table
+            %tr
+                %th Distance
+                %th Time
+            - @fare_info['StationToStationInfos'].each do |info|
+                %tr
+                    %td= info['CompositeMiles']
+                    %td= info['RailTime']
+                %tr
+                    %th Fare
+                    %th Cost
+                -info['RailFare'].each do |fare,value|
+                    %tr
+                        %td= fare
+                        %td= number_to_currency(value)
+    ```
